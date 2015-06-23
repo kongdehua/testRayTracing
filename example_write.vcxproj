@@ -152,6 +152,7 @@
     <ClCompile Include="Polygon2D.cpp" />
     <ClCompile Include="ProjectionData.cpp" />
     <ClCompile Include="ProjectionFunction.cpp" />
+    <ClCompile Include="RinhoModel.cpp" />
     <ClCompile Include="TracingNode.cpp" />
     <ClCompile Include="Triangle2D.cpp" />
   </ItemGroup>
@@ -163,6 +164,7 @@
     <ClInclude Include="Polygon2D.h" />
     <ClInclude Include="ProjectionData.h" />
     <ClInclude Include="ProjectionFunction.h" />
+    <ClInclude Include="RinhoModel.h" />
     <ClInclude Include="TracingNode.h" />
     <ClInclude Include="Triangle2D.h" />
   </ItemGroup>

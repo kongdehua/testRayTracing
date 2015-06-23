@@ -24,6 +24,7 @@
 
 #include "ProjectionFunction.h"
 
+
 static bool write_simple_file_example(
             FILE* fp,
             int version,
@@ -1057,8 +1058,6 @@ static bool write_trimmed_surface_example( FILE* fp, int version, ON_TextLog& er
 //int main ( int argc, const char* argv[] )
 int main ()
 {
-	projection();
-	return 0;
   bool rc;
   const char* filename;
 
@@ -1084,13 +1083,33 @@ int main ()
 
   // messages printed to stdout
   ON_TextLog message_log;
+/**********************************************************************************/
+	// read example
+  filename = "D:\\work\\opennurbs_20130711\\example_write\\my_mesh.3dm";
+   importModel( filename, message_log );
+  if (rc)
+    message_log.Print("Successfully wrote %s.\n",filename);
+  else
+    message_log.Print("Errors while writing %s.\n",filename);
+	return 0;
 
-  // errors logged in text file
-  //FILE* error_log_fp = ON::OpenFile("error_log.txt","w");
-  //ON_TextLog error_log(error_log_fp);
+/**********************************************************************************/
+	// write example
+
+  filename = "projection.3dm";
+  FILE* fp = ON::OpenFile( filename, "wb" );
+  rc = projection( fp, version, error_log );
+  ON::CloseFile( fp );
+  if (rc)
+    message_log.Print("Successfully wrote %s.\n",filename);
+  else
+    message_log.Print("Errors while writing %s.\n",filename);
+
+	return 0;
+/**********************************************************************************/
 
   filename = "my_points.3dm";
-  FILE* fp = ON::OpenFile( filename, "wb" );
+  fp = ON::OpenFile( filename, "wb" );
   rc = write_points_example( fp, version, error_log );
   ON::CloseFile( fp );
   if (rc)
@@ -1098,7 +1117,7 @@ int main ()
   else
     message_log.Print("Errors while writing %s.\n",filename);
 
-  filename = "my_curves.3dm";
+	filename = "my_curves.3dm";
   fp = ON::OpenFile( filename, "wb" );
   rc = write_curves_example( fp, version, error_log );
   ON::CloseFile( fp );

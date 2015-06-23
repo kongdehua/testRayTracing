@@ -25,6 +25,9 @@ public:
 	double Y() const {return m_lfY;}
 	double Z() const {return m_lfZ;}
 
+public:
+	void SetCoord(double x, double y, double z);
+
 private:
 	double m_lfX;
 	double m_lfY;
@@ -36,11 +39,12 @@ class CVector
 public:
 	CVector();
 	CVector(double x, double y, double z);
-	CVector(CPoint pnt1);
-	CVector(CPoint pnt1, CPoint Pnt2);
+	CVector(const CPoint &pnt1);
+	CVector(const CPoint &pnt1, const CPoint &Pnt2);
 
 	CVector(const CVector &right);
 
+	void PrintSelf();
 public:
 	double X() const {return m_lfX;}
 	double Y() const {return m_lfY;}
@@ -48,6 +52,13 @@ public:
 
 public:
 	void SetVector(double x, double y, double z);
+
+public:
+	double Modulus() const;
+
+public:
+	void Normalize() ;
+	CVector Normalized () const;
 
 public:
 	CPoint Added(const CPoint& Other) const;
@@ -98,10 +109,10 @@ public:
 	CPlane(CPoint pnt1, CPoint pnt2, CPoint pnt3);
 
 public:
-	CPoint  Position() { return m_pntOrigin; }
-	CVector Normal()   { return m_dirNormal; }
-	CVector X()        { return m_dirX;      }
-	CVector Y()        { return m_dirY;      }
+	CPoint  Position()     const { return m_pntOrigin; }
+	CVector Normal()       const { return m_dirNormal; }
+	CVector XDircection()  const { return m_dirX;      }
+	CVector YDircection()  const { return m_dirY;      }
 
 public:
 	CPoint param(CPoint2D pnt2D);

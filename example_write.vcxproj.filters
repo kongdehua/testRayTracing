@@ -37,6 +37,9 @@
     <ClCompile Include="ProjectionFunction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RinhoModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\examples_linking_pragmas.h">
@@ -66,5 +69,6 @@
     <ClInclude Include="ProjectionFunction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RinhoModel.h" />
   </ItemGroup>
 </Project>

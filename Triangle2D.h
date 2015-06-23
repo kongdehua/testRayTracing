@@ -6,6 +6,6 @@ class CTriangle2D
 public:
 	CTriangle2D(void);
 	~CTriangle2D(void);
-private:
+public:
 	std::vector< CPoint2D > m_vecPoint;
 };

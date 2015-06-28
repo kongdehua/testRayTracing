@@ -115,7 +115,8 @@ public:
 	CVector YDircection()  const { return m_dirY;      }
 
 public:
-	CPoint param(CPoint2D pnt2D);
+	CPoint param (CPoint2D pnt2D) const;
+	CPoint convertPoint(const CPoint &pnt) const;
 
 private:
 	CPoint m_pntOrigin;

@@ -90,7 +90,7 @@ void CVector::PrintSelf()
 
 void CVector::SetVector(double x, double y, double z)
 {
-	double D = sqrt(x*x + y*y + z*z);
+	//double D = sqrt(x*x + y*y + z*z);
 	//if ( D < 1e-6 )
 	//	throw "vector SetCoord error.";
 	m_lfX = (x);
@@ -223,11 +223,19 @@ CPlane::CPlane(CPoint pnt1, CPoint pnt2, CPoint pnt3)
 	m_dirY.Normalize();
 }
 
-CPoint CPlane::param(CPoint2D pnt2D)
+CPoint CPlane::param(CPoint2D pnt2D) const
 {
 	CPoint pnt;
 	pnt = this->m_pntOrigin 
 		+ pnt2D.X() * this->XDircection()
 		+ pnt2D.Y() * this->YDircection();
 	return pnt;
+}
+
+CPoint CPlane::convertPoint(const CPoint &pnt) const
+{
+	CVector OP( Position() , pnt);
+	return CPoint( OP.Dot(XDircection()),
+				OP.Dot(YDircection()),
+				OP.Dot(Normal()));
 }

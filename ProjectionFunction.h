@@ -15,6 +15,8 @@ public:
 
 bool write_points_example( FILE* fp, int version, ON_TextLog& error_log  );
 
+bool RayTracing();
+
 CRinhoModel importModel(const char *sFileName, ON_TextLog& dump);
 bool projection(FILE* fp, int version, ON_TextLog& error_log);
 

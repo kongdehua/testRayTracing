@@ -1083,10 +1083,13 @@ int main ()
 
   // messages printed to stdout
   ON_TextLog message_log;
+
+  rc = true;
 /**********************************************************************************/
 	// read example
-  filename = "D:\\work\\opennurbs_20130711\\example_write\\my_mesh.3dm";
-   importModel( filename, message_log );
+  filename = "E:\\work\\opennurbs_20130711\\example_write\\my_mesh.3dm";
+  //filename = "D:\\work\\opennurbs_20130711\\example_write\\my_mesh.3dm";
+  importModel( filename, message_log );
   if (rc)
     message_log.Print("Successfully wrote %s.\n",filename);
   else

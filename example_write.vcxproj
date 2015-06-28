@@ -149,6 +149,7 @@
     <ClCompile Include="example_write.cpp" />
     <ClCompile Include="Function2D.cpp" />
     <ClCompile Include="Function3D.cpp" />
+    <ClCompile Include="NurbsHelper.cpp" />
     <ClCompile Include="Polygon2D.cpp" />
     <ClCompile Include="ProjectionData.cpp" />
     <ClCompile Include="ProjectionFunction.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="..\example_userdata\example_ud.h" />
     <ClInclude Include="Function2D.h" />
     <ClInclude Include="Function3D.h" />
+    <ClInclude Include="NurbsHelper.h" />
     <ClInclude Include="Polygon2D.h" />
     <ClInclude Include="ProjectionData.h" />
     <ClInclude Include="ProjectionFunction.h" />

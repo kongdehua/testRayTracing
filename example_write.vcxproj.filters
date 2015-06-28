@@ -40,6 +40,9 @@
     <ClCompile Include="RinhoModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NurbsHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\examples_linking_pragmas.h">
@@ -70,5 +73,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RinhoModel.h" />
+    <ClInclude Include="NurbsHelper.h" />
   </ItemGroup>
 </Project>
